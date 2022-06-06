@@ -1,0 +1,7 @@
+Automation test - https://generatedata.com
+
+herramientas usadas [Maven - TestNG - Selenium(Page Object Model) - Selenium Grid]
+
+entorno [Google Chrome 101 - linux]
+
+este proyecto de automatizacion sobre la web https://generatedata.com primero se coloca el idioma español, se selecciona aleatoriamente tres tipo de datos, adicionalmente selecciona SQL en los formato de datos y dandole al boton Generar
