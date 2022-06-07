@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomeGD extends pageModel.Base {
-	public HomeGD(WebDriver driver) {
-		super(driver);
-	}
 
 	WebDriver driver = null;
 
@@ -34,11 +31,15 @@ public class HomeGD extends pageModel.Base {
 
 	///// -- 3 Generar --/////
 	private By btnGenerar = By.xpath("//div[@class='Homepage__button--xs_']");
+	//---- COOKIES-----//
+		private By cookies = By.xpath("//span[contains(text(), 'Okey')]");
 
-	
+	///// -- CONTRUCTOR --/////
+	public HomeGD(WebDriver driver) {
+		super(driver);
+	}
 
-	
-
+	///// -- METODOS --/////
 	public void idiomaES() {
 		findElemento(idioma).click();
 		esperarElemento(español);
@@ -47,7 +48,7 @@ public class HomeGD extends pageModel.Base {
 
 	public void clickTodosDatos(int i) {
 
-	switch (i) {
+		switch (i) {
 		case 1:
 			findElemento(nombre).click();
 			break;
@@ -89,61 +90,16 @@ public class HomeGD extends pageModel.Base {
 		}
 	}
 
-	public void clickDato(By dato) {
-		findElemento(dato).click();
-	}
-
-	public void clickTelefono() {
-		findElemento(telefono).click();
-	}
-
-	public void clickEmail() {
-		findElemento(email).click();
-	}
-
-	public void clickDireccion() {
-		findElemento(direccion).click();
-	}
-
-	public void clickPostal() {
-		findElemento(postal).click();
-	}
-
-	public void clickRegion() {
-		findElemento(region).click();
-	}
-
-	public void clickPais() {
-		findElemento(pais).click();
-	}
-
-	public void clickLista() {
-		findElemento(lista).click();
-	}
-
-	public void clickPalabra() {
-		findElemento(palabra).click();
-	}
-
-	public void clickNumero() {
-		findElemento(numero).click();
-	}
-
-	public void clickMoneda() {
-		findElemento(moneda).click();
-	}
-
-	public void clickAlfanumerica() {
-		findElemento(alfanumerica).click();
-	}
-
 	public void clickGenerar() {
 		esperarElemento(btnGenerar);
 		findElemento(btnGenerar).click();
 	}
-	
+
 	public void clickSql() {
 		findElemento(sql).click();
 	}
-
+	public void clickAceptarCookies() {
+		esperarElemento(cookies);
+		findElemento(cookies).click();
+	}
 }

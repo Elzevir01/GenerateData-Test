@@ -2,25 +2,56 @@ package pageModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class GeneratorGD extends pageModel.Base{
+	
+	WebDriver driver = null;
+	//------PREVIEW------//
+	private By preview = By.xpath("//span[contains(text(), 'Avance')]");
+	
+	//-------NOMBRE------//
+	private By btnNombresOcci = By.xpath("//span[contains(@title, 'Nombres occidentales')]");
+	private By btnNomRegionales = By.xpath("//span[contains(text(), 'regionales')]");
+	private By btnNomSeleccione = By.xpath("//div[contains(text(), 'Seleccione')]");
+	private By btnNomChile = By.xpath("//*[contains(text(), 'Chile')]");
+	private By btnNomCerrar = By.xpath("//span[contains(text(), 'Cerrar')]");
+	//-------GENERATE------//
+	private By btnGenerate = By.xpath("//span[contains(text(), 'Generar')]");
+	private By cancelar = By.xpath("//span[contains(text(), 'cancelar')]");
+	//repetido usar localizador relativo
+	private By generar = By.xpath("//span[contains(text(), 'Generar')]");
+	//------CONFIRMACION Y DESCARGA------//
+	private By confirmacion = By.xpath("//div[contains(text(), 'Datos generados.')]");
+	private By descargar = By.xpath("//span[contains(text(), 'Descargar')]");
+	
+	
+	/////-- CONSTRUCTOR --/////
 	public GeneratorGD(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
-	WebDriver driver = null;
+	/////-- METODOS --/////
+	public void exNombres() {
+		findElemento(btnNombresOcci).click();
+		esperarElemento(btnNomRegionales);
+		findElemento(btnNomRegionales).click();
+		esperarElemento(btnNomSeleccione);
+		findElemento(btnNomSeleccione).click();
+		findElemento(btnNomChile).click();
+		findElemento(btnNomCerrar).click();
+	}
+	public void clickbtnGenerate() {
+		findElemento(btnGenerate).click();
+		esperarElemento(cancelar);
+		findElemento(with(generar).toRightOf(cancelar)).click();;
+	}
+	public void clickPreview() {
+		esperarElemento(preview);
+		findElemento(preview).click();
+	}
+	public void clickDescargar() {
+		esperarElemento(confirmacion);
+		findElemento(descargar).click();
+	}
 	
-	private By txtName = By.xpath("//input[contains(@value, 'name')]");
-	private By txtPhone = By.xpath("//input[contains(@value, 'phone')]");
-	private By txtEmail = By.xpath("//input[contains(@value, 'email')]");
-	private By txtAddress = By.xpath("//input[contains(@value, 'address')]");
-	private By txtPostalZip = By.xpath("//input[contains(@value, 'postalZip')]");
-	private By txtRegion = By.xpath("//input[contains(@value, 'region')]");
-	private By txtCountry = By.xpath("//input[contains(@value, 'country')]");
-	private By txtList = By.xpath("//input[contains(@value, 'list')]");
-	private By txtAlphanumeric = By.xpath("//input[contains(@value, 'alphanumeric')]");
-	private By txtMoneda = By.xpath("//input[contains(@value, 'currency')]");
-	private By txtNumberrange = By.xpath("//input[contains(@value, 'numberrange')]");
-	private By txtText = By.xpath("//input[contains(@value, 'text')]");
-
 }

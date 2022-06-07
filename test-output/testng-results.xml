@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-05T22:32:49 ART" name="TestSuite" finished-at="2022-06-05T22:33:12 ART" duration-ms="23134">
+  <suite started-at="2022-06-06T22:45:46 ART" name="TestSuite" finished-at="2022-06-06T22:46:18 ART" duration-ms="31807">
     <groups>
     </groups>
-    <test started-at="2022-06-05T22:32:49 ART" name="CHROME" finished-at="2022-06-05T22:33:12 ART" duration-ms="23134">
+    <test started-at="2022-06-06T22:45:46 ART" name="CHROME" finished-at="2022-06-06T22:46:18 ART" duration-ms="31807">
       <class name="com.generatedata.generatedataTest">
-        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String)[pri:0, instance:com.generatedata.generatedataTest@659499f1]" started-at="2022-06-05T22:32:49 ART" name="beforeTest" finished-at="2022-06-05T22:32:51 ART" duration-ms="1747" status="PASS">
+        <test-method is-config="true" signature="beforeTest(java.lang.String,java.lang.String)[pri:0, instance:com.generatedata.generatedataTest@88a8218]" started-at="2022-06-06T22:45:46 ART" name="beforeTest" finished-at="2022-06-06T22:45:50 ART" duration-ms="4505" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -23,15 +23,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.generatedata.generatedataTest@659499f1]" started-at="2022-06-05T22:32:51 ART" name="beforeClass" finished-at="2022-06-05T22:32:51 ART" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.generatedata.generatedataTest@88a8218]" started-at="2022-06-06T22:45:50 ART" name="beforeClass" finished-at="2022-06-06T22:45:50 ART" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="datatest()[pri:0, instance:com.generatedata.generatedataTest@659499f1]" started-at="2022-06-05T22:32:51 ART" name="datatest" finished-at="2022-06-05T22:33:12 ART" duration-ms="21125" status="PASS">
+        <test-method signature="datatest()[pri:0, instance:com.generatedata.generatedataTest@88a8218]" started-at="2022-06-06T22:45:50 ART" name="datatest" finished-at="2022-06-06T22:46:17 ART" duration-ms="26927" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- datatest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.generatedata.generatedataTest@659499f1]" started-at="2022-06-05T22:33:12 ART" name="tearDown" finished-at="2022-06-05T22:33:12 ART" duration-ms="230" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.generatedata.generatedataTest@88a8218]" started-at="2022-06-06T22:46:17 ART" name="tearDown" finished-at="2022-06-06T22:46:18 ART" duration-ms="304" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

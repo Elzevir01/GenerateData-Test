@@ -31,6 +31,7 @@ public class generatedataTest {
 		hg.esperarWeb();
 		hg.idiomaES();
 		hg.esperarWeb();
+		hg.clickAceptarCookies();
 		Thread.sleep(2000);
 
 		botones = new int[3];
@@ -60,6 +61,13 @@ public class generatedataTest {
 		hg.clickGenerar();
 		hg.esperarWeb();
 		
+		Thread.sleep(4000);
+		gg = new GeneratorGD(driver);
+		
+		
+		gg.clickPreview();
+		gg.clickbtnGenerate();
+		gg.clickDescargar();
 		Thread.sleep(4000);
 	}
 
