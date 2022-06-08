@@ -15,4 +15,32 @@
       </class> <!-- com.generatedata.generatedataTest -->
     </classes>
   </test> <!-- CHROME(failed) -->
+  <test thread-count="1" parallel="tests" name="FIREFOX(failed)">
+    <parameter name="browser" value="FIREFOX"/>
+    <parameter name="nodeUrl" value="http://localhost:4444/wd/hub"/>
+    <classes>
+      <class name="com.generatedata.generatedataTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="beforeTest"/>
+          <include name="datatest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.generatedata.generatedataTest -->
+    </classes>
+  </test> <!-- FIREFOX(failed) -->
+  <test thread-count="1" parallel="tests" name="EDGE(failed)">
+    <parameter name="browser" value="EDGE"/>
+    <parameter name="nodeUrl" value="http://localhost:4444/wd/hub"/>
+    <classes>
+      <class name="com.generatedata.generatedataTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="beforeTest"/>
+          <include name="datatest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.generatedata.generatedataTest -->
+    </classes>
+  </test> <!-- EDGE(failed) -->
 </suite> <!-- Failed suite [TestSuite] -->

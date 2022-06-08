@@ -9,6 +9,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.CapabilityType;
@@ -57,7 +58,13 @@ public class BrowserFactory {
 			capf.setCapability(CapabilityType.PLATFORM, Platform.ANY);
 			capf.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), capf);
-
+			break;
+		case "EDGE":
+			EdgeOptions eapf = new EdgeOptions();
+			eapf.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+			eapf.setCapability(CapabilityType.PLATFORM, Platform.ANY);
+			eapf.getBrowserName();
+			driver = new RemoteWebDriver(new URL(nodeURL), eapf);
 			break;
 		case "OPERA":
 			OperaOptions capo = new OperaOptions();
@@ -68,7 +75,6 @@ public class BrowserFactory {
 			capo.setCapability(CapabilityType.PLATFORM, Platform.ANY);
 			capo.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), capo);
-
 			break;
 		case "ANDROID":
 			try {
@@ -93,7 +99,7 @@ public class BrowserFactory {
 			}
 		}
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		return driver;
 
 	}
