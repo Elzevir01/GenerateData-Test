@@ -45,23 +45,14 @@ public class BrowserFactory {
 		switch (browser.toString().toUpperCase()) {
 		case "CHROME":
 			ChromeOptions capc = new ChromeOptions();
-			capc.setPlatformName("Linux");
-			capc.setBrowserVersion("102");;
-			capc.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), capc);
 			break;
 		case "FIREFOX":
 			FirefoxOptions capf = new FirefoxOptions();
-			capf.setPlatformName("Linux");
-			capf.setBrowserVersion("101");
-			capf.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), capf);
 			break;
 		case "EDGE":
 			EdgeOptions cape = new EdgeOptions();
-			cape.setPlatformName("Linux");
-			cape.setBrowserVersion("102");
-			cape.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), cape);
 			break;
 		case "ANCHROME":
