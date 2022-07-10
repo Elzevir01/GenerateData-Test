@@ -17,6 +17,7 @@ public class generatedataTest {
 
 	WebDriver driver;
 	String URL = "https://generatedata.com/";
+	String plataforma ;
 	DriverFactory df = null;
 	BrowserFactory bf = null;
 	HomeGD hg = null;
@@ -28,9 +29,13 @@ public class generatedataTest {
 	public void datatest() throws InterruptedException {
 		hg = new HomeGD(driver);
 		hg.navegar(URL);
+		if(plataforma == "ANCHROME" || plataforma == "ANFIREFOX") {
+			hg.idiomaESMobil();
+		}else {
 		hg.esperarWeb();
 		hg.idiomaES();
 		hg.esperarWeb();
+		}
 		hg.clickAceptarCookies();
 		Thread.sleep(2000);
 
@@ -79,6 +84,7 @@ public class generatedataTest {
 	@Parameters({ "browser", "nodeUrl" })
 	public void beforeTest(String browser, String nodeUrl) {
 		try {
+			plataforma = browser;
 			bf = new BrowserFactory();
 			DriverFactory.getInstance().setDriver(bf.setDriver(browser, nodeUrl));
 			driver = DriverFactory.getInstance().getDriver();

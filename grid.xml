@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestSuite" thread-count="1" parallel="tests">
-	
+	<!--
 	<test name="CHROME">
 		<parameter name="browser" value="CHROME"></parameter>
 		<parameter name="nodeUrl" value="http://localhost:4444/wd/hub"></parameter>
@@ -24,7 +24,25 @@
 		<classes>
 			<class name="com.generatedata.generatedataTest" />
 		</classes>
+	</test> -->
+	<test name="ANDROID-CHROME">
+		<parameter name="browser" value="ANCHROME"></parameter>
+		<parameter name="nodeUrl"
+			value="http://127.0.0.1:4723/wd/hub/"></parameter>
+		<classes>
+			<class name="com.generatedata.generatedataTest" />
+		</classes>
 	</test>
+	<!--
+	<test name="ANDROID-FIREFOX">
+		<parameter name="browser" value="ANFIREFOX"></parameter>
+		<parameter name="nodeUrl"
+			value="http://127.0.0.1:4723/wd/hub/"></parameter>
+		<classes>
+			<class name="com.generatedata.generatedataTest" />
+		</classes>
+	</test>
+	 -->
 	<!-- <test name="OPERA">
 		<parameter name="browser" value="OPERA"></parameter>
 		<parameter name="nodeUrl" value="http://localhost:4444/wd/hub"></parameter>

@@ -6,11 +6,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomeGD extends pageModel.Base {
 
-	WebDriver driver = null;
+	//WebDriver driver = null;
 
 	///// -- 0 Seleccion de idioma --/////
 	private By idioma = By.xpath("//span[contains(@title, 'Select Language')]");
 	private By español = By.xpath("//span[contains(text(), 'Español')]");
+	
+	private By botonMenuMobil = By.xpath("//span[@class= 'MuiButton-label']");
+	private By idiomaMobil = By.xpath("//li[contains(text(), 'Select Language')]");
 
 	///// -- 1 Elija los tipos de datos que desee--/////
 	private By nombre = By.xpath("//div[contains(text(), 'Nombre')]");
@@ -36,7 +39,8 @@ public class HomeGD extends pageModel.Base {
 
 	///// -- CONTRUCTOR --/////
 	public HomeGD(WebDriver driver) {
-		super(driver);
+		super.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	///// -- METODOS --/////
@@ -45,7 +49,13 @@ public class HomeGD extends pageModel.Base {
 		esperarElemento(español);
 		findElemento(español).click();
 	}
-
+	public void idiomaESMobil() {
+		findElemento(botonMenuMobil).click();
+		esperarElemento(idiomaMobil);
+		findElemento(idiomaMobil).click();
+		esperarElemento(español);
+		findElemento(español).click();
+	}
 	public void clickTodosDatos(int i) {
 
 		switch (i) {

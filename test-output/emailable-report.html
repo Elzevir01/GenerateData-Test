@@ -9,40 +9,41 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">TestSuite</th></tr>
-<tr><td><a href="#t0">CHROME</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">45.625</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">FIREFOX</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">74.033</td><td></td><td></td></tr>
-<tr><td><a href="#t2">EDGE</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">72.929</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">3</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">192.587</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">ANDROID-CHROME</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">14.686</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">CHROME &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.generatedata.generatedataTest</td><td><a href="#m0">datatest</a></td><td rowspan="1">1654649408729</td><td rowspan="1">42885</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">FIREFOX &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.generatedata.generatedataTest</td><td><a href="#m1">tearDown</a></td><td rowspan="1">1654649524951</td><td rowspan="1">1352</td></tr><tr><th colspan="4">FIREFOX &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.generatedata.generatedataTest</td><td><a href="#m2">datatest</a></td><td rowspan="1">1654649473278</td><td rowspan="1">51670</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">EDGE &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.generatedata.generatedataTest</td><td><a href="#m3">datatest</a></td><td rowspan="1">1654649555105</td><td rowspan="1">43483</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">ANDROID-CHROME &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.generatedata.generatedataTest</td><td><a href="#m0">tearDown</a></td><td rowspan="1">1655781925485</td><td rowspan="1">71</td></tr><tr><th colspan="4">ANDROID-CHROME &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.generatedata.generatedataTest</td><td><a href="#m1">datatest</a></td><td rowspan="1">1655781925438</td><td rowspan="1">36</td></tr></tbody>
 </table>
-<h2>CHROME</h2><h3 id="m0">com.generatedata.generatedataTest#datatest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>FIREFOX</h2><h3 id="m1">com.generatedata.generatedataTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
-Build info: version: &apos;4.1.4&apos;, revision: &apos;535d840ee2&apos;
-System info: host: &apos;elzevir-N56VB&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-113-generic&apos;, java.version: &apos;17.0.2&apos;
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [db1da397-55bf-42e0-a9c4-3f776fbef71c, quit {}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 99.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220411174855, moz:debuggerAddress: localhost:53202, moz:firefoxOptions: {}, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 694, moz:profile: /tmp/rust_mozprofileIQIwn9, moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: ANY, platformName: ANY, platformVersion: 5.4.0-113-generic, proxy: Proxy(), se:cdp: ws://172.18.0.5:4444/sessio..., se:cdpVersion: 85.0, se:noVncPort: 7900, se:vnc: ws://172.18.0.5:4444/sessio..., se:vncEnabled: true, se:vncLocalAddress: ws://172.18.0.5:7900, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore}
-Session ID: db1da397-55bf-42e0-a9c4-3f776fbef71c
+<h2>ANDROID-CHROME</h2><h3 id="m0">com.generatedata.generatedataTest#tearDown</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.UnsupportedCommandException: The requested resource could not be found, or a request was received using an HTTP method that is not supported by the mapped resource
+Build info: version: &apos;4.2.2&apos;, revision: &apos;683ccb65d6&apos;
+System info: host: &apos;elzevir-N56VB&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-120-generic&apos;, java.version: &apos;17.0.2&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [709270e4-ef2c-4a77-b9d6-bdad590df6d4, close {}]
+Capabilities {appium:adbExecTimeout: 60000, appium:appActivity: com.google.android.apps.chr..., appium:appPackage: com.android.chrome, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 60000, appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, automationName: UiAutomator2, deviceName: SM-J71MN, newCommandTimeout: 60, platformName: android, platformVersion: 8.1.0, udid: 52032936c0e08321, unlockKey: 1526}, appium:deviceApiLevel: 27, appium:deviceManufacturer: samsung, appium:deviceModel: SM-J710MN, appium:deviceName: 52032936c0e08321, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1280, appium:deviceUDID: 52032936c0e08321, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 60, appium:pixelRatio: 2, appium:platformVersion: 8.1.0, appium:statBarHeight: 48, appium:takesScreenshot: true, appium:udid: 52032936c0e08321, appium:unlockKey: 1526, appium:viewportRect: {height: 1232, left: 0, top: 48, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 709270e4-ef2c-4a77-b9d6-bdad590df6d4
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:622)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:626)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:463)
-	at driver.BrowserFactory.removeDriver(BrowserFactory.java:109)
-	at com.generatedata.generatedataTest.tearDown(generatedataTest.java:92)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:588)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:643)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:267)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:473)
+	at driver.BrowserFactory.removeDriver(BrowserFactory.java:148)
+	at com.generatedata.generatedataTest.tearDown(generatedataTest.java:98)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 ... Removed 20 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.generatedata.generatedataTest#datatest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>EDGE</h2><h3 id="m3">com.generatedata.generatedataTest#datatest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.generatedata.generatedataTest#datatest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at pageModel.Base.navegar(Base.java:43)
+	at com.generatedata.generatedataTest.datatest(generatedataTest.java:31)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

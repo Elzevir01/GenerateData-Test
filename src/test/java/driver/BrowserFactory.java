@@ -3,107 +3,134 @@ package driver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Collections;
 
-import org.openqa.selenium.Platform;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.opera.OperaOptions;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class BrowserFactory {
 	DesiredCapabilities desiredCapability;
+	AppiumDriver adriver;
 	WebDriver driver;
-	String nodeURL = "";
-
+	//String nodeURL = "";
+	
+	
 	public BrowserFactory() {
 
 	}
-
+	public BrowserFactory(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	public WebDriver getDriver() {
+		return driver;
+	}
 	private static DriverFactory instance = new DriverFactory();
 
 	public static DriverFactory getInstance() {
 		return instance;
 	}
 
-	public WebDriver getDriver() {
-		return driver;
-	}
-
 	public WebDriver setDriver(String browser, String nodeURL) throws MalformedURLException {
 		System.getProperty("java.classpath");
 		new DesiredCapabilities();
-		
+
 		switch (browser.toString().toUpperCase()) {
 		case "CHROME":
-
 			ChromeOptions capc = new ChromeOptions();
-			capc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-			capc.setCapability(CapabilityType.PLATFORM, Platform.ANY);
+			capc.setPlatformName("Linux");
+			capc.setBrowserVersion("102");;
 			capc.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), capc);
 			break;
 		case "FIREFOX":
 			FirefoxOptions capf = new FirefoxOptions();
-			capf.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-			capf.setCapability(CapabilityType.PLATFORM, Platform.ANY);
+			capf.setPlatformName("Linux");
+			capf.setBrowserVersion("101");
 			capf.getBrowserName();
 			driver = new RemoteWebDriver(new URL(nodeURL), capf);
 			break;
 		case "EDGE":
-			EdgeOptions eapf = new EdgeOptions();
-			eapf.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-			eapf.setCapability(CapabilityType.PLATFORM, Platform.ANY);
-			eapf.getBrowserName();
-			driver = new RemoteWebDriver(new URL(nodeURL), eapf);
+			EdgeOptions cape = new EdgeOptions();
+			cape.setPlatformName("Linux");
+			cape.setBrowserVersion("102");
+			cape.getBrowserName();
+			driver = new RemoteWebDriver(new URL(nodeURL), cape);
 			break;
-		case "OPERA":
-			OperaOptions capo = new OperaOptions();
-			capo.addArguments("--start-maximized --disable-");
-			capo.setExperimentalOption("useAutomationExtension", false);
-			capo.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-			capo.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-			capo.setCapability(CapabilityType.PLATFORM, Platform.ANY);
-			capo.getBrowserName();
-			driver = new RemoteWebDriver(new URL(nodeURL), capo);
-			break;
-		case "ANDROID":
+		case "ANCHROME":
 			try {
-					String nodeappiumURL = "http://localhost:4723/wd/hub";
-					DesiredCapabilities caps = new DesiredCapabilities();
-					caps.setCapability(MobileCapabilityType.PLATFORM_NAME, "ANDROID");
-					caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.1.0");
-					caps.setCapability(MobileCapabilityType.DEVICE_NAME, "SM-J71MN");
-					caps.setCapability(MobileCapabilityType.UDID, "52032936c0e08321");
-					caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
-					caps.setCapability(MobileCapabilityType.BROWSER_NAME, "CHROME");
-					caps.getBrowserName();
-					URL node = new URL(nodeURL);
-					//driver = new RemoteWebDriver(new URL(nodeappiumURL), caps);
-					driver= new AppiumDriver<MobileElement>(node, caps);
-					break;
-					
-			}catch(Exception exp) {
-				System.out.println("Cause is : "+exp.getCause());
-				System.out.println("Message is : "+exp.getMessage());
+				UiAutomator2Options options = new UiAutomator2Options()
+						
+						.setPlatformName("Android")
+						.setDeviceName("SM-J71MN")
+						//.setChromedriverDisableBuildCheck(true)
+						//.setChromedriverUseSystemExecutable(true)
+						//.setApp("com.android.chrome")
+						.setAutomationName("UiAutomator2")
+						.setAppPackage("com.android.chrome")
+						.setNewCommandTimeout(Duration.ofSeconds(60))
+						.setAdbExecTimeout(Duration.ofSeconds(60))
+						.setUnlockKey("1526")
+						.setAppActivity("com.google.android.apps.chrome.Main")
+						.setUdid("52032936c0e08321")
+						.setPlatformVersion("8.1.0");
+						
+				//RemoteWebDriver-AppiumDriver-AppiumDriver
+				driver = new AppiumDriver(new URL(nodeURL),options);
+				
+
+			} catch (Exception exp) {
+				System.out.println("Cause is : " + exp.getCause());
+				System.out.println("Message is : " + exp.getMessage());
 				exp.printStackTrace();
 			}
+				break;
+			case "ANFIREFOX":
+			try {
+				UiAutomator2Options options = new UiAutomator2Options()
+						.setPlatformName("Android")
+						.setDeviceName("SM-J71MN")
+						//.setApp("com.android.chrome")
+						.setAppPackage("org.mozilla.firefox")
+						.setAutomationName("Gecko")
+						.setNewCommandTimeout(Duration.ofSeconds(60))
+						.setAdbExecTimeout(Duration.ofSeconds(60))
+						.setUnlockKey("1526")
+						.setAppActivity("org.mozilla.firefox.apps.firefox.Main")
+						.setUdid("52032936c0e08321")
+						.setPlatformVersion("8.1.0");
+						
+				//RemoteWebDriver-AppiumDriver-AppiumDriver
+				driver = new AppiumDriver(new URL(nodeURL),options);
+				
+			} catch (Exception exp) {
+				System.out.println("Cause is : " + exp.getCause());
+				System.out.println("Message is : " + exp.getMessage());
+				exp.printStackTrace();
+			}
+			break;
+			default:
+				break;
 		}
+		if((browser)!="ANCHROME"){
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+		driver.manage().timeouts().scriptTimeout(Duration.ofMinutes(2));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+		}
 		return driver;
 
 	}
-
+	public AppiumDriver ad() {
+		return adriver;
+	}
 	public void removeDriver() {
 		driver.close();
 		driver.quit();

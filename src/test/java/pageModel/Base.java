@@ -21,45 +21,26 @@ public class Base {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	
-
+	public Base() {
+		
+	}
 	//// METODOS/////
 	
 	public WebElement findElemento(By elemento) {
 		return driver.findElement(elemento);
 	}
-	
-
 	public void sendKey(WebDriver driver, WebElement elemento, String texto) {
 		elemento.sendKeys(texto);
 	}
-
 	public void cursorTo(By elemento) {
 		new Actions(driver).moveToElement(findElemento(elemento)).perform();
 	}
-
-	public boolean checkElement(WebElement elemento) {
-		try {
-			if (elemento.isDisplayed()) {
-				System.out.println("Elemento: [ " + elemento.getText() + " ] Existe");
-			}
-			return true;
-		} catch (org.openqa.selenium.NoSuchElementException e) {
-			System.out.println("Elemento: [ " + elemento.getText() + " ]X NO Existe");
-			return false;
-		}
-	}
-
 	public void navegar(String url) {
 		driver.get(url);
 	}
-
 	public String titulo(WebDriver driver) {
 		return driver.getTitle();
 	}
-
-	
 	public void clearText(WebElement elemento) {
 		elemento.clear();
 	}
@@ -72,11 +53,5 @@ public class Base {
 	public void confirmarTitulo(String titulo) {
 		ExpectedConditions.titleIs(titulo);
 	}
-	/*
-	 * if (!driver.getTitle().equals("Home Page of logged in user")) {
-      throw new IllegalStateException("This is not Home Page of logged in user," +
-            " current page is: " + driver.getCurrentUrl());
-    }
-	 */
 	 
 }

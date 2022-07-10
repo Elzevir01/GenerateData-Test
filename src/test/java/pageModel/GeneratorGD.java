@@ -2,11 +2,13 @@ package pageModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class GeneratorGD extends pageModel.Base{
 	
-	WebDriver driver = null;
+	//WebDriver driver = null;
 	//------PREVIEW------//
 	private By preview = By.xpath("//span[contains(text(), 'Avance')]");
 	
@@ -28,7 +30,8 @@ public class GeneratorGD extends pageModel.Base{
 	
 	/////-- CONSTRUCTOR --/////
 	public GeneratorGD(WebDriver driver) {
-		super(driver);
+		super.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 	/////-- METODOS --/////
 	public void exNombres() {
