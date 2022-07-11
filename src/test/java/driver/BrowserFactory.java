@@ -73,7 +73,6 @@ public class BrowserFactory {
 						.setUdid("52032936c0e08321")
 						.setPlatformVersion("8.1.0");
 						
-				//RemoteWebDriver-AppiumDriver-AppiumDriver
 				driver = new AppiumDriver(new URL(nodeURL),options);
 				
 
@@ -83,30 +82,6 @@ public class BrowserFactory {
 				exp.printStackTrace();
 			}
 				break;
-			case "ANFIREFOX":
-			try {
-				UiAutomator2Options options = new UiAutomator2Options()
-						.setPlatformName("Android")
-						.setDeviceName("SM-J71MN")
-						//.setApp("com.android.chrome")
-						.setAppPackage("org.mozilla.firefox")
-						.setAutomationName("Gecko")
-						.setNewCommandTimeout(Duration.ofSeconds(60))
-						.setAdbExecTimeout(Duration.ofSeconds(60))
-						.setUnlockKey("1526")
-						.setAppActivity("org.mozilla.firefox.apps.firefox.Main")
-						.setUdid("52032936c0e08321")
-						.setPlatformVersion("8.1.0");
-						
-				//RemoteWebDriver-AppiumDriver-AppiumDriver
-				driver = new AppiumDriver(new URL(nodeURL),options);
-				
-			} catch (Exception exp) {
-				System.out.println("Cause is : " + exp.getCause());
-				System.out.println("Message is : " + exp.getMessage());
-				exp.printStackTrace();
-			}
-			break;
 			default:
 				break;
 		}
