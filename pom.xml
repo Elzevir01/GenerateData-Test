@@ -37,7 +37,7 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.2.2</version>
+			<version>4.3.0</version>
 		</dependency>
 		<!-- MAVEN SUREFIRE PLUGIN -->
 		<dependency>
@@ -61,35 +61,20 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
-			<version>4.2.2</version>
-		</dependency>
-		<!-- OPERA DRIVER -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-opera-driver</artifactId>
-			<version>4.2.2</version>
+			<version>4.3.0</version>
 		</dependency>
 		<!-- EDGE DRIVER -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-edge-driver</artifactId>
-			<version>4.2.2</version>
+			<version>4.3.0</version>
 		</dependency>
-		<!-- Selenium Remote Driver -->
-		<!--<dependency> <groupId>org.seleniumhq.selenium</groupId> <artifactId>selenium-remote-driver</artifactId> 
-			<version>4.2.1</version> </dependency> -->
 		<!-- TEST-NG -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.4.0</version>
 			<scope>test</scope>
-		</dependency>
-		<!-- MySql -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.23</version>
 		</dependency>
 		<!-- SLF4J API Module -->
 		<dependency>
