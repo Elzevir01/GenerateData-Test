@@ -8,7 +8,6 @@
 			<class name="com.generatedata.generatedataTest" />
 		</classes>
 	</test>
-	<!--
 	<test name="FIREFOX">
 		<parameter name="browser" value="FIREFOX"></parameter>
 		<parameter name="nodeUrl"
@@ -25,6 +24,7 @@
 			<class name="com.generatedata.generatedataTest" />
 		</classes>
 	</test> 
+    	<!--
 	<test name="ANDROID-CHROME">
 		<parameter name="browser" value="ANCHROME"></parameter>
 		<parameter name="nodeUrl"
@@ -33,22 +33,6 @@
 			<class name="com.generatedata.generatedataTest" />
 		</classes>
 	</test>
-	<test name="ANDROID-FIREFOX">
-		<parameter name="browser" value="ANFIREFOX"></parameter>
-		<parameter name="nodeUrl"
-			value="http://127.0.0.1:4723/wd/hub/"></parameter>
-		<classes>
-			<class name="com.generatedata.generatedataTest" />
-		</classes>
-	</test>
 	 -->
-	<!-- <test name="OPERA">
-		<parameter name="browser" value="OPERA"></parameter>
-		<parameter name="nodeUrl" value="http://localhost:4444/wd/hub"></parameter>
-		<classes>
-			<class name="DeckBuildTest.TestDeckBuild" />
-		</classes>
-	</test>
-</test> -->
      
 </suite>
