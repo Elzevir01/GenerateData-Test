@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 public class BrowserFactory {
@@ -55,25 +56,26 @@ public class BrowserFactory {
 			EdgeOptions cape = new EdgeOptions();
 			driver = new RemoteWebDriver(new URL(nodeURL), cape);
 			break;
-		case "ANCHROME":
+		case "ANDROID-CH":
 			try {
 				UiAutomator2Options options = new UiAutomator2Options()
-						
 						.setPlatformName("Android")
-						.setDeviceName("SM-J71MN")
-						//.setChromedriverDisableBuildCheck(true)
-						//.setChromedriverUseSystemExecutable(true)
-						//.setApp("com.android.chrome")
-						.setAutomationName("UiAutomator2")
-						.setAppPackage("com.android.chrome")
+						.setDeviceName("SM-J71MN")//"emulator-5554"//"SM-J71MN"
+						.setAdbExecTimeout(Duration.ofSeconds(150))
 						.setNewCommandTimeout(Duration.ofSeconds(60))
-						.setAdbExecTimeout(Duration.ofSeconds(60))
-						.setUnlockKey("1526")
-						.setAppActivity("com.google.android.apps.chrome.Main")
+						.setAutomationName("UiAutomator2")
+						//adb logcat
+						//.setAppPackage("com.android.chrome")
+						//.setAppActivity("com.google.android.apps.chrome.Main")
+						.setChromedriverExecutable("/home/WebDriver/chromedriver")
+						.setChromedriverUseSystemExecutable(true)
+						//.setUnlockKey("")
 						.setUdid("52032936c0e08321")
-						.setPlatformVersion("8.1.0");
+						.setPlatformVersion("8.1.0");//"8.1.0"//11
+						ChromeOptions opt = new ChromeOptions();
+						options.setCapability(ChromeOptions.CAPABILITY, opt);
 						
-				driver = new AppiumDriver(new URL(nodeURL),options);
+						driver = new AndroidDriver(new URL(nodeURL),options);
 				
 
 			} catch (Exception exp) {

@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import driver.BrowserFactory;
 import driver.DriverFactory;
 import pageModel.HomeGD;
+import pageModel.HomeGDDesk;
+import pageModel.HomeGDMobil;
 import pageModel.GeneratorGD;
 
 import org.testng.annotations.Parameters;
@@ -17,7 +19,8 @@ public class generatedataTest {
 
 	WebDriver driver;
 	String URL = "https://generatedata.com/";
-	String plataforma ;
+	public String plataforma = "";
+	int flag =0;
 	DriverFactory df = null;
 	BrowserFactory bf = null;
 	HomeGD hg = null;
@@ -27,16 +30,17 @@ public class generatedataTest {
 
 	@Test
 	public void datatest() throws InterruptedException {
-		hg = new HomeGD(driver);
-		hg.navegar(URL);
-		if(plataforma == "ANCHROME" || plataforma == "ANFIREFOX") {
-			hg.idiomaESMobil();
-		}else {
-		hg.esperarWeb();
-		hg.idiomaES();
-		hg.esperarWeb();
+		
+		System.out.println(plataforma);
+		//plataforma = "ANDROID-CH";cl[i] instanceof PayPerView
+		if(flag == 0) {
+			hg = new HomeGDMobil(driver);
+		}else if (flag == 1) {
+			hg = new HomeGDDesk(driver);
 		}
+		hg.navegar(URL);
 		hg.clickAceptarCookies();
+		hg.idiomaES();
 		Thread.sleep(2000);
 
 		botones = new int[3];
@@ -64,13 +68,13 @@ public class generatedataTest {
 		Thread.sleep(2000);
 		
 		hg.clickGenerar();
-		hg.esperarWeb();
 		
 		Thread.sleep(4000);
 		gg = new GeneratorGD(driver);
 		
-		
+		if(flag==1) {
 		gg.clickPreview();
+		}
 		gg.clickbtnGenerate();
 		gg.clickDescargar();
 		Thread.sleep(4000);
@@ -84,7 +88,15 @@ public class generatedataTest {
 	@Parameters({ "browser", "nodeUrl" })
 	public void beforeTest(String browser, String nodeUrl) {
 		try {
-			plataforma = browser;
+			//plataforma = browser;
+			switch(browser) {
+			case "ANDROID-CH":
+				flag = 0;
+				break;
+			default:
+				flag = 1;
+				break;
+			}
 			bf = new BrowserFactory();
 			DriverFactory.getInstance().setDriver(bf.setDriver(browser, nodeUrl));
 			driver = DriverFactory.getInstance().getDriver();

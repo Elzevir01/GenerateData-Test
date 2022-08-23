@@ -130,9 +130,17 @@
                   <a name="datatest">
                   </a> <!-- datatest -->
                   <span class="method-name">datatest</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
-	at pageModel.Base.navegar(Base.java:43)
-	at com.generatedata.generatedataTest.datatest(generatedataTest.java:31)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[contains(text(), &apos;cancelar&apos;)] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.3.0&apos;, revision: &apos;a4995e2c09*&apos;
+System info: host: &apos;elzevir-N56VB&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.4.0-122-generic&apos;, java.version: &apos;17.0.4&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 150000, appium:appActivity: com.google.android.apps.chr..., appium:appPackage: com.android.chrome, appium:automationName: UiAutomator2, appium:chromedriverExecutable: /home/WebDriver/chromedriver, appium:chromedriverUseSystemExecutable: true, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 150000, automationName: UiAutomator2, browserName: chrome, chromedriverExecutable: /home/WebDriver/chromedriver, chromedriverUseSystemExecutable: true, deviceName: SM-J71MN, goog:chromeOptions: {args: [], extensions: []}, newCommandTimeout: 60, platformName: android, platformVersion: 8.1.0, udid: 52032936c0e08321}, appium:deviceApiLevel: 27, appium:deviceManufacturer: samsung, appium:deviceModel: SM-J710MN, appium:deviceName: 52032936c0e08321, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1280, appium:deviceUDID: 52032936c0e08321, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 60, appium:pixelRatio: 2, appium:platformVersion: 8.1.0, appium:statBarHeight: 48, appium:takesScreenshot: true, appium:udid: 52032936c0e08321, appium:viewportRect: {height: 1232, left: 0, top: 48, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, platformName: ANDROID}
+Session ID: 76e35431-bed4-4e6b-8f24-90babf88259f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at pageModel.Base.esperarElemento(Base.java:49)
+	at pageModel.GeneratorGD.clickbtnGenerate(GeneratorGD.java:48)
+	at com.generatedata.generatedataTest.datatest(generatedataTest.java:78)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
@@ -147,20 +155,20 @@
         </div> <!-- panel TestSuite -->
         <div panel-name="test-xml-TestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/home/elzevir/eclipse-workspace/Data/grid.xml</span>
+            <span class="header-content">/home/elzevir/eclipse-workspace06/GenerateData-Test/grid.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;TestSuite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;ANDROID-CHROME&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;ANCHROME&quot;/&gt;
+  &lt;test thread-count=&quot;1&quot; parallel=&quot;tests&quot; name=&quot;ANDROID-CH&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;ANDROID-CH&quot;/&gt;
     &lt;parameter name=&quot;nodeUrl&quot; value=&quot;http://127.0.0.1:4723/wd/hub/&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.generatedata.generatedataTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- ANDROID-CHROME --&gt;
+  &lt;/test&gt; &lt;!-- ANDROID-CH --&gt;
 &lt;/suite&gt; &lt;!-- TestSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -172,7 +180,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">ANDROID-CHROME (1 class)</span>
+                <span class="test-name">ANDROID-CH (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -202,12 +210,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'datatest')
 data.setCell(0, 2, 'com.generatedata.generatedataTest')
-data.setCell(0, 3, 36);
+data.setCell(0, 3, 38635);
 window.suiteTableData['TestSuite']= { tableData: data, tableDiv: 'times-div-TestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 55 seconds</span>
               <div id="times-div-TestSuite">
               </div> <!-- times-div-TestSuite -->
             </div> <!-- times-div -->
@@ -235,24 +243,22 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.generatedata.generatedataTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">beforeTest(ANCHROME, http://127.0.0.1:4723/wd/hub/)</span>
+                <span class="method-name">beforeTest(ANDROID-CH, http://127.0.0.1:4723/wd/hub/)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">14534 ms</span>
+                <span class="method-start">15871 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">datatest</span>
-                <span class="method-start">14551 ms</span>
+                <span class="method-start">15881 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">tearDown</span>
-                <span class="method-start">14598 ms</span>
+                <span class="method-start">54528 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

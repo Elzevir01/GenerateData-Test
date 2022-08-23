@@ -48,8 +48,6 @@ public class Base {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(elemento));	
 	}
-	public void esperarWeb() {
-	}
 	public void confirmarTitulo(String titulo) {
 		ExpectedConditions.titleIs(titulo);
 	}

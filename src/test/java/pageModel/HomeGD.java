@@ -8,12 +8,7 @@ public class HomeGD extends pageModel.Base {
 
 	//WebDriver driver = null;
 
-	///// -- 0 Seleccion de idioma --/////
-	private By idioma = By.xpath("//span[contains(@title, 'Select Language')]");
-	private By español = By.xpath("//span[contains(text(), 'Español')]");
 	
-	private By botonMenuMobil = By.xpath("//span[@class= 'MuiButton-label']");
-	private By idiomaMobil = By.xpath("//li[contains(text(), 'Select Language')]");
 
 	///// -- 1 Elija los tipos de datos que desee--/////
 	private By nombre = By.xpath("//div[contains(text(), 'Nombre')]");
@@ -35,27 +30,17 @@ public class HomeGD extends pageModel.Base {
 	///// -- 3 Generar --/////
 	private By btnGenerar = By.xpath("//div[@class='Homepage__button--xs_']");
 	//---- COOKIES-----//
-		private By cookies = By.xpath("//span[contains(text(), 'Okey')]");
+		private By cookies = By.xpath("//span[contains(text(), 'Okay')]");
 
 	///// -- CONTRUCTOR --/////
 	public HomeGD(WebDriver driver) {
 		super.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
+	public HomeGD() {
+		
+	}
 	///// -- METODOS --/////
-	public void idiomaES() {
-		findElemento(idioma).click();
-		esperarElemento(español);
-		findElemento(español).click();
-	}
-	public void idiomaESMobil() {
-		findElemento(botonMenuMobil).click();
-		esperarElemento(idiomaMobil);
-		findElemento(idiomaMobil).click();
-		esperarElemento(español);
-		findElemento(español).click();
-	}
 	public void clickTodosDatos(int i) {
 
 		switch (i) {
@@ -111,5 +96,8 @@ public class HomeGD extends pageModel.Base {
 	public void clickAceptarCookies() {
 		esperarElemento(cookies);
 		findElemento(cookies).click();
+	}
+	public void idiomaES() {
+		
 	}
 }

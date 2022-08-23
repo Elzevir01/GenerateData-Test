@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="1" parallel="tests" name="Failed suite [TestSuite]" guice-stage="DEVELOPMENT">
-  <test thread-count="1" parallel="tests" name="ANDROID-CHROME(failed)">
-    <parameter name="browser" value="ANCHROME"/>
+  <test thread-count="1" parallel="tests" name="ANDROID-CH(failed)">
+    <parameter name="browser" value="ANDROID-CH"/>
     <parameter name="nodeUrl" value="http://127.0.0.1:4723/wd/hub/"/>
     <classes>
       <class name="com.generatedata.generatedataTest">
@@ -14,5 +14,5 @@
         </methods>
       </class> <!-- com.generatedata.generatedataTest -->
     </classes>
-  </test> <!-- ANDROID-CHROME(failed) -->
+  </test> <!-- ANDROID-CH(failed) -->
 </suite> <!-- Failed suite [TestSuite] -->
