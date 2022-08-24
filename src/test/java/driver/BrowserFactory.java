@@ -100,7 +100,7 @@ public class BrowserFactory {
 		return adriver;
 	}
 	public void removeDriver() {
-		driver.close();
+		//driver.close();
 		driver.quit();
 
 	}
